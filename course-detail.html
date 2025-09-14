@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Full Stack Web Development - NextGenEd</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    
+    <!-- Course Detail Page Styles -->
+    <style>
+        .course-detail-hero {
+            background: linear-gradient(rgba(210, 76, 39, 0.9), rgba(118, 75, 162, 0.9)), url('assets/images/heading-bg-courses.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 40px;
+            color: white;
+        }
+        
+        .course-header {
+            margin-bottom: 30px;
+        }
+        
+        .course-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .course-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .course-stats {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .stat-icon {
+            font-size: 1.2rem;
+        }
+        
+        .main-content {
+            padding: 40px 0;
+            background: #f8f9fa;
+        }
+        
+        .video-section {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .video-player {
+            position: relative;
+            background: #000;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-placeholder {
+            text-align: center;
+            color: white;
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #d24c27;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+            background: white;
+        }
+        
+        .video-info {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .video-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .video-meta {
+            display: flex;
+            gap: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .course-tabs {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .tab-navigation {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            overflow-x: auto;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 20px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .tab-btn.active {
+            color: #d24c27;
+            border-bottom-color: #d24c27;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 30px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .course-description {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .course-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #d24c27, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .course-content-section {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .content-header {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .content-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .content-toggle {
+            background: none;
+            border: none;
+            color: #d24c27;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .content-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .content-item {
+            padding: 15px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: background 0.3s ease;
+        }
+        
+        .content-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .content-item:last-child {
+            border-bottom: none;
+        }
+        
+        .content-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .content-checkbox.checked {
+            background: #d24c27;
+            border-color: #d24c27;
+            position: relative;
+        }
+        
+        .content-checkbox.checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .content-info {
+            flex: 1;
+        }
+        
+        .content-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .content-duration {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .content-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-resource {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            color: #666;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-resource:hover {
+            background: #d24c27;
+            color: white;
+            border-color: #d24c27;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .enroll-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .course-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d24c27;
+            margin-bottom: 10px;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+        
+        .btn-enroll {
+            background: linear-gradient(135deg, #d24c27, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .btn-enroll:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(210, 76, 39, 0.4);
+        }
+        
+        .btn-wishlist {
+            background: transparent;
+            color: #d24c27;
+            border: 2px solid #d24c27;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-wishlist:hover {
+            background: #d24c27;
+            color: white;
+        }
+        
+        .course-includes {
+            margin-bottom: 30px;
+        }
+        
+        .includes-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .includes-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .includes-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .includes-icon {
+            color: #d24c27;
+            font-size: 1.1rem;
+        }
+        
+        .instructor-card {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        
+        .instructor-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .instructor-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d24c27, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .instructor-details h5 {
+            margin: 0 0 5px 0;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .instructor-details p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .instructor-bio {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .course-stats {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .video-player {
+                height: 250px;
+            }
+            
+            .tab-navigation {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sub Header -->
+    <div class="sub-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-8">
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="right-icons">
+                        <ul>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-behance"></i></a></li>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            NextGenEd
+                        </a>
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="meetings.html">Meetings</a></li>
+                            <li><a href="About.html">About US</a></li>
+                            <li><a href="Courses.html" class="active">Courses</a></li> 
+                            <li><a href="Profile.html">Profile</a></li> 
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-detail-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="course-header">
+                        <h1 class="course-title">The Complete Full-Stack Web Development Bootcamp</h1>
+                        <p class="course-subtitle">Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, PostgreSQL, Web3 and DApps.</p>
+                        <div class="course-stats">
+                            <div class="stat-item">
+                                <i class="fa fa-star stat-icon"></i>
+                                <span>4.7</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>452,154 ratings</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>1,496,373 Students</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fa fa-clock-o stat-icon"></i>
+                                <span>61.5 hours Total</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Video Section -->
+                    <div class="video-section">
+                        <div class="video-player">
+                            <div class="video-placeholder">
+                                <div class="play-button" onclick="playVideo()">
+                                    <i class="fa fa-play"></i>
+                                </div>
+                                <h4>Click to start learning</h4>
+                                <p>Video will be loaded here</p>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Introduction to Full-Stack Development</h3>
+                            <div class="video-meta">
+                                <span><i class="fa fa-clock-o"></i> 15:30</span>
+                                <span><i class="fa fa-eye"></i> 1,234 views</span>
+                                <span><i class="fa fa-calendar"></i> 2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Tabs -->
+                    <div class="course-tabs">
+                        <div class="tab-navigation">
+                            <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+                            <button class="tab-btn" onclick="showTab('lectures')">Course Content</button>
+                            <button class="tab-btn" onclick="showTab('qa')">Q&A</button>
+                            <button class="tab-btn" onclick="showTab('notes')">Notes</button>
+                            <button class="tab-btn" onclick="showTab('announcements')">Announcements</button>
+                            <button class="tab-btn" onclick="showTab('reviews')">Reviews</button>
+                        </div>
+
+                        <!-- Overview Tab -->
+                        <div id="overview" class="tab-content active">
+                            <div class="course-description">
+                                <p>This comprehensive course will take you from a complete beginner to a professional full-stack web developer. You'll learn the most in-demand technologies including HTML, CSS, JavaScript, Node.js, React, MongoDB, and much more.</p>
+                                
+                                <p>By the end of this course, you'll be able to build real-world applications, understand modern development practices, and have a portfolio of projects that will impress potential employers.</p>
+                            </div>
+
+                            <div class="course-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fa fa-code"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Hands-on Projects</h5>
+                                        <p>Build 10+ real-world projects</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fa fa-certificate"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Certificate</h5>
+                                        <p>Get a completion certificate</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fa fa-mobile"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Mobile Friendly</h5>
+                                        <p>Learn on any device</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Community</h5>
+                                        <p>Join 100k+ students</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Content Tab -->
+                        <div id="lectures" class="tab-content">
+                            <div class="course-content-section">
+                                <div class="content-header">
+                                    <h4 class="content-title">Course Content</h4>
+                                    <button class="content-toggle" onclick="toggleContent()">Expand All</button>
+                                </div>
+                                <div class="content-list">
+                                    <div class="content-item">
+                                        <input type="checkbox" class="content-checkbox" checked>
+                                        <div class="content-info">
+                                            <div class="content-name">198. The NPM Package Manager and Installing External Node Modules</div>
+                                            <div class="content-duration">16min</div>
+                                        </div>
+                                        <div class="content-actions">
+                                            <button class="btn-resource">Resources</button>
+                                        </div>
+                                    </div>
+                                    <div class="content-item">
+                                        <input type="checkbox" class="content-checkbox" checked>
+                                        <div class="content-info">
+                                            <div class="content-name">199. [Project] QR Code Generator</div>
+                                            <div class="content-duration">16min</div>
+                                        </div>
+                                        <div class="content-actions">
+                                            <button class="btn-resource">Resources</button>
+                                        </div>
+                                    </div>
+                                    <div class="content-item">
+                                        <input type="checkbox" class="content-checkbox">
+                                        <div class="content-info">
+                                            <div class="content-name">200. Tip from Angela - Step Up to the Challenge</div>
+                                            <div class="content-duration">1min</div>
+                                        </div>
+                                        <div class="content-actions"></div>
+                                    </div>
+                                    <div class="content-item">
+                                        <input type="checkbox" class="content-checkbox">
+                                        <div class="content-info">
+                                            <div class="content-name">Section 24: Express.js with Node.js</div>
+                                            <div class="content-duration">0/8 | 2hr 1min</div>
+                                        </div>
+                                        <div class="content-actions"></div>
+                                    </div>
+                                    <div class="content-item">
+                                        <input type="checkbox" class="content-checkbox">
+                                        <div class="content-info">
+                                            <div class="content-name">Section 25: EJS</div>
+                                            <div class="content-duration">0/6 | 1hr 30min</div>
+                                        </div>
+                                        <div class="content-actions"></div>
+                                    </div>
+                                    <div class="content-item">
+                                        <input type="checkbox" class="content-checkbox">
+                                        <div class="content-info">
+                                            <div class="content-name">Section 26: Capstone Project - Create a Blog web application</div>
+                                            <div class="content-duration">0/1 | 3min</div>
+                                        </div>
+                                        <div class="content-actions"></div>
+                                    </div>
+                                    <div class="content-item">
+                                        <input type="checkbox" class="content-checkbox">
+                                        <div class="content-info">
+                                            <div class="content-name">Section 27: Git, Github and Version Control</div>
+                                            <div class="content-duration">0/9 | 1hr 17min</div>
+                                        </div>
+                                        <div class="content-actions"></div>
+                                    </div>
+                                    <div class="content-item">
+                                        <input type="checkbox" class="content-checkbox">
+                                        <div class="content-info">
+                                            <div class="content-name">Section 28: Application Programming Interfaces (APIs)</div>
+                                            <div class="content-duration">0/8 | 2hr 28min</div>
+                                        </div>
+                                        <div class="content-actions"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other tabs content would go here -->
+                        <div id="qa" class="tab-content">
+                            <h4>Q&A Section</h4>
+                            <p>Ask questions and get help from instructors and fellow students.</p>
+                        </div>
+                        <div id="notes" class="tab-content">
+                            <h4>My Notes</h4>
+                            <p>Take notes while watching videos and keep them organized.</p>
+                        </div>
+                        <div id="announcements" class="tab-content">
+                            <h4>Announcements</h4>
+                            <p>Stay updated with course announcements and updates.</p>
+                        </div>
+                        <div id="reviews" class="tab-content">
+                            <h4>Student Reviews</h4>
+                            <p>Read what other students say about this course.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <div class="enroll-section">
+                            <div class="course-price">
+                                <span class="original-price">$599</span>
+                                $299
+                            </div>
+                            <button class="btn-enroll">Enroll Now</button>
+                            <button class="btn-wishlist">
+                                <i class="fa fa-heart"></i> Add to Wishlist
+                            </button>
+                        </div>
+
+                        <div class="course-includes">
+                            <h5 class="includes-title">This course includes:</h5>
+                            <ul class="includes-list">
+                                <li class="includes-item">
+                                    <i class="fa fa-play-circle includes-icon"></i>
+                                    <span>61.5 hours on-demand video</span>
+                                </li>
+                                <li class="includes-item">
+                                    <i class="fa fa-file-text includes-icon"></i>
+                                    <span>50+ downloadable resources</span>
+                                </li>
+                                <li class="includes-item">
+                                    <i class="fa fa-mobile includes-icon"></i>
+                                    <span>Access on mobile and TV</span>
+                                </li>
+                                <li class="includes-item">
+                                    <i class="fa fa-infinity includes-icon"></i>
+                                    <span>Full lifetime access</span>
+                                </li>
+                                <li class="includes-item">
+                                    <i class="fa fa-certificate includes-icon"></i>
+                                    <span>Certificate of completion</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="instructor-card">
+                            <h5 class="includes-title">Instructor</h5>
+                            <div class="instructor-info">
+                                <div class="instructor-avatar">SC</div>
+                                <div class="instructor-details">
+                                    <h5>Sarah Chen</h5>
+                                    <p>Senior Full-Stack Developer</p>
+                                </div>
+                            </div>
+                            <p class="instructor-bio">
+                                Sarah is a senior developer with 8+ years of experience in web development. 
+                                She has worked at top tech companies and loves teaching others how to code.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <!-- Course Detail Scripts -->
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            var tabContents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Remove active class from all tab buttons
+            var tabButtons = document.getElementsByClassName('tab-btn');
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        function playVideo() {
+            alert('Video player will be integrated here. This is a placeholder for the actual video functionality.');
+        }
+        
+        function toggleContent() {
+            var checkboxes = document.querySelectorAll('.content-checkbox');
+            var allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            
+            checkboxes.forEach(cb => {
+                cb.checked = !allChecked;
+                cb.classList.toggle('checked', !allChecked);
+            });
+            
+            var toggleBtn = document.querySelector('.content-toggle');
+            toggleBtn.textContent = allChecked ? 'Expand All' : 'Collapse All';
+        }
+        
+        // Initialize checkboxes
+        document.addEventListener('DOMContentLoaded', function() {
+            var checkboxes = document.querySelectorAll('.content-checkbox');
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    cb.classList.add('checked');
+                }
+                
+                cb.addEventListener('change', function() {
+                    this.classList.toggle('checked', this.checked);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

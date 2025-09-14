@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Courses - NextGenEd</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    
+    <!-- Courses Page Styles -->
+    <style>
+        .courses-hero {
+            background: linear-gradient(rgba(210, 76, 39, 0.8), rgba(118, 75, 162, 0.8)), url('assets/images/heading-bg-courses.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0 80px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .courses-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .courses-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .courses-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .filter-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+        
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid #e9ecef;
+            color: #6c757d;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #667eea;
+            border-color: #667eea;
+            color: white;
+        }
+        
+        .courses-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .course-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .course-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.9);
+            color: #667eea;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .course-price {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .course-content {
+            padding: 30px;
+        }
+        
+        .course-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .course-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .course-rating {
+            display: flex;
+            align-items: center;
+        }
+        
+        .course-rating .stars {
+            color: #ffc107;
+            margin-right: 10px;
+        }
+        
+        .course-duration {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .course-instructor {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .instructor-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 15px;
+            font-weight: 600;
+        }
+        
+        .instructor-info h6 {
+            margin: 0;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .instructor-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .course-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-enroll {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+        }
+        
+        .btn-enroll:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn-preview {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-preview:hover {
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .featured-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .featured-course {
+            background: linear-gradient(135deg, #d24c27 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-course::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #d24c27 0%, #764ba2 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .search-section {
+            background: white;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sub Header -->
+    <div class="sub-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-8">
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="right-icons">
+                        <ul>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-behance"></i></a></li>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            NextGenEd
+                        </a>
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="meetings.html">Meetings</a></li>
+                            <li><a href="About.html">About US</a></li>
+                            <li class="scroll-to-section"><a href="Courses.html" class="active">Courses</a></li> 
+                            <li class="scroll-to-section"><a href="Profile.html">Profile</a></li> 
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Courses Hero Section -->
+    <section class="courses-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Explore Our Courses</h1>
+                    <p>Discover a wide range of courses designed to help you master new skills, advance your career, and achieve your learning goals with expert instructors and cutting-edge content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search for courses, instructors, or topics...">
+                        <button class="search-btn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Courses</button>
+                        <button class="filter-btn" data-filter="web-development">Web Development</button>
+                        <button class="filter-btn" data-filter="data-science">Data Science</button>
+                        <button class="filter-btn" data-filter="mobile-app">Mobile App</button>
+                        <button class="filter-btn" data-filter="design">Design</button>
+                        <button class="filter-btn" data-filter="business">Business</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="row">
+                <!-- Course 1 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="web-development">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-03.jpg" alt="Full Stack Web Development">
+                            <div class="course-category">Web Development</div>
+                            <div class="course-price">$299</div>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">Full Stack Web Development</h3>
+                            <p class="course-description">Master the complete web development stack with HTML, CSS, JavaScript, React, Node.js, and MongoDB. Build real-world projects and become a professional developer.</p>
+                            <div class="course-meta">
+                                <div class="course-rating">
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span>4.9 (1,234)</span>
+                                </div>
+                                <div class="course-duration">
+                                    <i class="fa fa-clock-o"></i> 120 hours
+                                </div>
+                            </div>
+                            <div class="course-instructor">
+                                <div class="instructor-avatar">SC</div>
+                                <div class="instructor-info">
+                                    <h6>Sarah Chen</h6>
+                                    <p>Senior Developer</p>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <a href="course-detail.html" class="btn-enroll">Enroll Now</a>
+                                <a href="course-detail.html" class="btn-preview">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="data-science">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-02.jpg" alt="Data Science & Machine Learning">
+                            <div class="course-category">Data Science</div>
+                            <div class="course-price">$399</div>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">Data Science & Machine Learning</h3>
+                            <p class="course-description">Learn Python, pandas, scikit-learn, and TensorFlow to analyze data and build intelligent systems. Perfect for beginners to advanced learners.</p>
+                            <div class="course-meta">
+                                <div class="course-rating">
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span>4.8 (856)</span>
+                                </div>
+                                <div class="course-duration">
+                                    <i class="fa fa-clock-o"></i> 150 hours
+                                </div>
+                            </div>
+                            <div class="course-instructor">
+                                <div class="instructor-avatar">MR</div>
+                                <div class="instructor-info">
+                                    <h6>Dr. Michael Rodriguez</h6>
+                                    <p>Data Scientist</p>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <a href="course-detail.html" class="btn-enroll">Enroll Now</a>
+                                <a href="course-detail.html" class="btn-preview">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="mobile-app">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-01.jpg" alt="Mobile App Development">
+                            <div class="course-category">Mobile App</div>
+                            <div class="course-price">$349</div>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">Mobile App Development</h3>
+                            <p class="course-description">Build native iOS and Android apps using React Native and Flutter. Learn app design, development, and deployment strategies.</p>
+                            <div class="course-meta">
+                                <div class="course-rating">
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span>4.7 (642)</span>
+                                </div>
+                                <div class="course-duration">
+                                    <i class="fa fa-clock-o"></i> 100 hours
+                                </div>
+                            </div>
+                            <div class="course-instructor">
+                                <div class="instructor-avatar">AJ</div>
+                                <div class="instructor-info">
+                                    <h6>Alex Johnson</h6>
+                                    <p>Mobile Developer</p>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <a href="course-detail.html" class="btn-enroll">Enroll Now</a>
+                                <a href="course-detail.html" class="btn-preview">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="design">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-04.jpg" alt="UI/UX Design">
+                            <div class="course-category">Design</div>
+                            <div class="course-price">$249</div>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">UI/UX Design Masterclass</h3>
+                            <p class="course-description">Master user interface and user experience design with Figma, Adobe XD, and design thinking principles. Create stunning digital experiences.</p>
+                            <div class="course-meta">
+                                <div class="course-rating">
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span>4.9 (789)</span>
+                                </div>
+                                <div class="course-duration">
+                                    <i class="fa fa-clock-o"></i> 80 hours
+                                </div>
+                            </div>
+                            <div class="course-instructor">
+                                <div class="instructor-avatar">ED</div>
+                                <div class="instructor-info">
+                                    <h6>Emma Davis</h6>
+                                    <p>UX Designer</p>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <a href="course-detail.html" class="btn-enroll">Enroll Now</a>
+                                <a href="course-detail.html" class="btn-preview">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="business">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-01.jpg" alt="Digital Marketing">
+                            <div class="course-category">Business</div>
+                            <div class="course-price">$199</div>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">Digital Marketing Strategy</h3>
+                            <p class="course-description">Learn SEO, social media marketing, content strategy, and analytics. Build effective marketing campaigns that drive results.</p>
+                            <div class="course-meta">
+                                <div class="course-rating">
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span>4.6 (523)</span>
+                                </div>
+                                <div class="course-duration">
+                                    <i class="fa fa-clock-o"></i> 60 hours
+                                </div>
+                            </div>
+                            <div class="course-instructor">
+                                <div class="instructor-avatar">LW</div>
+                                <div class="instructor-info">
+                                    <h6>Lisa Wang</h6>
+                                    <p>Marketing Expert</p>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <a href="course-detail.html" class="btn-enroll">Enroll Now</a>
+                                <a href="course-detail.html" class="btn-preview">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="web-development">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-02.jpg" alt="Python Programming">
+                            <div class="course-category">Web Development</div>
+                            <div class="course-price">$279</div>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">Python Programming</h3>
+                            <p class="course-description">Master Python from basics to advanced concepts. Learn Django, Flask, and build web applications with this versatile language.</p>
+                            <div class="course-meta">
+                                <div class="course-rating">
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span>4.8 (945)</span>
+                                </div>
+                                <div class="course-duration">
+                                    <i class="fa fa-clock-o"></i> 90 hours
+                                </div>
+                            </div>
+                            <div class="course-instructor">
+                                <div class="instructor-avatar">RB</div>
+                                <div class="instructor-info">
+                                    <h6>Robert Brown</h6>
+                                    <p>Python Expert</p>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <a href="course-detail.html" class="btn-enroll">Enroll Now</a>
+                                <a href="course-detail.html" class="btn-preview">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Course Section -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="featured-course">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 20px; position: relative; z-index: 2;">Featured Course</h2>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 30px; position: relative; z-index: 2;">Complete MERN Stack Development</h3>
+                        <p style="font-size: 1.2rem; margin-bottom: 40px; position: relative; z-index: 2; max-width: 600px; margin-left: auto; margin-right: auto;">
+                            Master the most in-demand web development stack. Learn MongoDB, Express.js, React, and Node.js to build full-stack applications from scratch.
+                        </p>
+                        <div style="position: relative; z-index: 2;">
+                            <a href="course-detail.html" class="cta-button">Enroll Now - $499</a>
+                            <a href="course-detail.html" class="cta-button" style="background: transparent; border: 2px solid white; color: white;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Start Learning?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 40px;">Join thousands of students who are already advancing their careers with NextGenEd</p>
+                    <a href="index.html#contact" class="cta-button">Get Started Today</a>
+                    <a href="About.html" class="cta-button">Learn About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <!-- Course Filter Script -->
+    <script>
+        $(document).ready(function() {
+            // Filter functionality
+            $('.filter-btn').click(function() {
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                
+                var filter = $(this).data('filter');
+                
+                if (filter === 'all') {
+                    $('.course-item').show();
+                } else {
+                    $('.course-item').hide();
+                    $('.course-item[data-category="' + filter + '"]').show();
+                }
+            });
+            
+            // Search functionality
+            $('.search-input').on('keyup', function() {
+                var searchTerm = $(this).val().toLowerCase();
+                
+                $('.course-item').each(function() {
+                    var courseText = $(this).text().toLowerCase();
+                    if (courseText.indexOf(searchTerm) !== -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

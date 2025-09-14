@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Education Meeting HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    
+    <!-- Modern Contact Form Styles -->
+    <style>
+      .contact-us {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .contact-us::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+          radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
+          radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px),
+          radial-gradient(circle at 40% 60%, rgba(255,255,255,0.1) 1px, transparent 1px);
+        background-size: 50px 50px, 60px 60px, 40px 40px;
+        opacity: 0.3;
+      }
+      
+      .modern-contact-form {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 2;
+        margin-bottom: 30px;
+      }
+      
+      .form-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .form-header h2 {
+        color: #2c3e50;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+      }
+      
+      .header-line {
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #e74c3c, #c0392b);
+        margin: 0 auto;
+        border-radius: 2px;
+      }
+      
+      .form-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .form-group {
+        flex: 1;
+        margin-bottom: 20px;
+      }
+      
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 15px 20px;
+        border: 2px solid #ecf0f1;
+        border-radius: 10px;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        transition: all 0.3s ease;
+        background: #f8f9fa;
+        color: #2c3e50;
+      }
+      
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #e74c3c;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+      }
+      
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: #95a5a6;
+        font-weight: 500;
+      }
+      
+      .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+      
+      .form-submit {
+        text-align: center;
+        margin-top: 30px;
+      }
+      
+      .submit-btn {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+      }
+      
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+      }
+      
+      .submit-btn:active {
+        transform: translateY(0);
+      }
+      
+      .submit-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+      }
+      
+      .contact-info {
+        background: rgba(255,255,255,0.1);
+        border-radius: 15px;
+        padding: 30px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+      }
+      
+      .contact-info h3 {
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+      
+      .info-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+      
+      .info-item:hover {
+        background: rgba(255,255,255,0.15);
+        transform: translateX(5px);
+      }
+      
+      .info-item h6 {
+        color: #ecf0f1;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .info-item span {
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      
+      @media (max-width: 768px) {
+        .form-row {
+          flex-direction: column;
+          gap: 0;
+        }
+        
+        .modern-contact-form {
+          padding: 30px 20px;
+          margin: 0 15px;
+        }
+        
+        .contact-info {
+          margin: 30px 15px 0;
+        }
+      }
+    </style>
+  </head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-behance"></i></a></li>
+              <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          NextGenEd
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li><a href="index.html">Home</a></li>
+                          <li><a href="meetings.html">Meetings</a></li>
+                          <li><a href="About.html">About US</a></li>
+                          <!-- <li class="has-sub">
+                              <a href="javascript:void(0)">Pages</a>
+                              <ul class="sub-menu">
+                                  <li><a href="meetings.html">Upcoming Meetings</a></li>
+                                  <li><a href="meeting-details.html">Meeting Details</a></li>
+                              </ul>
+                          </li> -->
+                          <li><a href="Courses.html">Courses</a></li> 
+                          <li><a href="Profile.html">Profile</a></li>  
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="assets/images/course-video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption">
+              <h6>Hello Students</h6>
+              <h2>Welcome to Start Your Carrer</h2>
+              <p>An interactive hub created to support students in learning, networking, and personal growth. As the host, I provide resources, guidance, and opportunities that inspire creativity, collaboration, and excellence. This platform connects learners and educators, empowering students to achieve their goals, build strong networks, and shape a brighter, successful future.</p>
+              <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+              </div>
+          </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+          
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/service-icon-01.png" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Education</h4>
+                <p>Holistic learning empowering students with knowledge, skills, values, creativity, and opportunities for lifelong success.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/service-icon-02.png" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Teachers</h4>
+                <p>Inspiring mentors guiding students with knowledge, patience, innovation, empathy, and lifelong impactful teaching.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/service-icon-03.png" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Students</h4>
+                <p>Dedicated learners achieving excellence through hard work, innovation, leadership, and consistent academic performance.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/service-icon-02.png" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Online Meeting</h4>
+                <p>Virtual platform connecting people globally, fostering collaboration, communication, productivity, and efficient knowledge sharing.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/service-icon-03.png" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Networking</h4>
+                <p>Strong professional connections enabling opportunities, career growth, collaboration, knowledge exchange, and lifelong meaningful relationships.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upcoming-meetings" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Upcoming Meetings</h2>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="categories">
+            <h4>Meeting Catgories</h4>
+            <ul>
+              <li><a href="#">Event Categories</a></li><br>
+              <li><a href="#">Sessions</a></li><br>
+              <li><a href="#">Agenda Categories</a></li><br>
+              <li><a href="#">Programs</a></li><br>
+              <li><a href="#">Workshops</a></li><br>
+            </ul>
+            <div class="main-button-red">
+              <a href="meetings.html">All Upcoming Meetings</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>$22.00</span>
+                  </div>
+                  <a href="meeting-details.html"><img src="assets/images/meeting-01.jpg" alt="New Lecturer Meeting"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Nov <span>10</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>
+                  <p>Hands-on sessions on data analysis, AI models, and predictive systems.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>$36.00</span>
+                  </div>
+                  <a href="meeting-details.html"><img src="assets/images/meeting-02.jpg" alt="Online Teaching"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Nov <span>24</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
+                  <p>Present and discuss academic and technical research findings.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>$14.00</span>
+                  </div>
+                  <a href="meeting-details.html"><img src="assets/images/meeting-03.jpg" alt="Higher Education"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Nov <span>26</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Higher Education Conference</h4></a>
+                  <p>Enhance decision-making,leadership, and team management skills.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>$48.00</span>
+                  </div>
+                  <a href="meeting-details.html"><img src="assets/images/meeting-04.jpg" alt="Student Training"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Nov <span>30</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Student Training Meetup</h4></a>
+                  <p>Master productivity in any domain.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apply-now" id="apply">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="item">
+                <h3>APPLY FOR BACHELOR DEGREE</h3>
+                <p>You are allowed to use this NextGenEd CSS template for your school or university or business. You can feel free to modify or edit this layout.</p>
+                <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+              </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="item">
+                <h3>APPLY FOR BACHELOR DEGREE</h3>
+                <p>You are not allowed to redistribute the template ZIP file on any other template website. Please contact us for more information.</p>
+                <div class="main-button-yellow">
+                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="accordions is-first-expanded">
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>About NextGenEd HTML Template</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>If you want to get the latest collection of HTML CSS templates for your websites, you may visit <a rel="nofollow" href="https://developer.mozilla.org/en-US/" target="_blank">MDN website</a>. If you need a working contact form script, please visit <a href="https://www.linkedin.com/in/chagantipati-bhanu-prakash-012005323/" target="_parent">Linked Profile</a> for more info.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>HTML CSS Bootstrap Layout</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Bootstrap is a popular front-end framework that makes it easier to design responsive and mobile-friendly web pages. By combining HTML for structure, CSS for styling, and Bootstrap’s prebuilt classes, developers can quickly build professional layouts without writing everything from scratch.<br>
+
+<br>Using Bootstrap’s grid system, you can divide your page into rows and columns, ensuring that the layout adjusts perfectly on desktops, tablets, and mobile devices. It also provides ready-made components such as navigation bars, buttons, forms, modals, and carousels that save development time.
+
+With Bootstrap, customization is flexible—you can override default CSS styles or extend them with your own code. <br>This makes it an excellent choice for both beginners and advanced developers who want a consistent and modern design.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Please tell your friends</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Sharing knowledge about HTML, CSS, and Bootstrap can help your friends build modern and responsive websites with ease. They will learn how structure, style, and layout work together to create professional designs.<br>
+<br>Encouraging them to explore Bootstrap’s grid system and components will save development time. By practicing together, you can improve faster, exchange ideas, and build creative projects as a team.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion last-accordion">
+                <div class="accordion-head">
+                    <span>Share this to your colleagues</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Encourage your colleagues to explore HTML, CSS, and Bootstrap for building clean and responsive layouts. Bootstrap’s grid system helps create designs that adapt to different devices with minimal effort.<br>
+<br>By sharing these tools, your team can save time on styling, use ready-made components, and maintain a consistent design across projects. Working together will make development faster and more efficient.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-courses" id="courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Our Popular Courses</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="owl-courses-item owl-carousel">
+            <div class="item">
+              <img src="assets/images/course-01.jpg" alt="Course One">
+              <div class="down-content">
+                <h4>Morbi tincidunt elit vitae justo rhoncus</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$160</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-02.jpg" alt="Course Two">
+              <div class="down-content">
+                <h4>Curabitur molestie dignissim purus vel</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$180</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-03.jpg" alt="">
+              <div class="down-content">
+                <h4>Nulla at ipsum a mauris egestas tempor</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$140</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-04.jpg" alt="">
+              <div class="down-content">
+                <h4>Aenean molestie quis libero gravida</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$120</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-01.jpg" alt="">
+              <div class="down-content">
+                <h4>Lorem ipsum dolor sit amet adipiscing elit</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$250</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-02.jpg" alt="">
+              <div class="down-content">
+                <h4>TemplateMo is the best website for Free CSS</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$270</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-03.jpg" alt="">
+              <div class="down-content">
+                <h4>Web Design Templates at your finger tips</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$340</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-04.jpg" alt="">
+              <div class="down-content">
+                <h4>Python Programming Course.</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$360</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-01.jpg" alt="">
+              <div class="down-content">
+                <h4>Flutter and Swift App Development</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$400</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-02.jpg" alt="">
+              <div class="down-content">
+                <h4>Download Free CSS Layouts for your business</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$430</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-03.jpg" alt="">
+              <div class="down-content">
+                <h4>Morbi in libero blandit lectus cursus</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$480</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-04.jpg" alt="">
+              <div class="down-content">
+                <h4>Curabitur molestie dignissim purus</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$560</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2>A Few Facts About Our Website</h2>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="count-area-content percentage">
+                    <div class="count-digit">94</div>
+                    <div class="count-title">Succesed Students</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">126</div>
+                    <div class="count-title">Current Teachers</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="count-area-content new-students">
+                    <div class="count-digit">2345</div>
+                    <div class="count-title">New Students</div>
+                  </div>
+                </div> 
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">32</div>
+                    <div class="count-title">Awards</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col-lg-6 align-self-center">
+          <div class="video">
+            <a href="https://www.youtube.com/watch?v=UZ6FQSyS3Yg" target="_blank"><img src="assets/images/play-icon.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-us" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <div class="modern-contact-form">
+            <div class="form-header">
+              <h2>LET'S GET IN TOUCH</h2>
+              <div class="header-line"></div>
+            </div>
+            <form id="contact-form" action="" method="post">
+              <div class="form-row">
+                <div class="form-group">
+                  <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
+                </div>
+                <div class="form-group">
+                  <input name="email" type="email" id="email" placeholder="YOUR EMAIL..." required="">
+                </div>
+                <div class="form-group">
+                  <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea name="message" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
+              </div>
+              <div class="form-submit">
+                <button type="submit" id="form-submit" class="submit-btn">SEND MESSAGE NOW</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-10">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <div class="info-item">
+              <h6>Phone Number</h6>
+              <span>83096-49014</span>
+            </div>
+            <div class="info-item">
+              <h6>Email Address</h6>
+              <span>bhanu@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <h6>Street Address</h6>
+              <span>Vijayawada, Krishna District, 520001</span>
+            </div>
+            <div class="info-item">
+              <h6>Website URL</h6>
+              <span>Hack_with_hyd.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+    
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        // Show loading state
+        const submitButton = document.getElementById("form-submit");
+        const originalText = submitButton.textContent;
+        submitButton.textContent = "Sending...";
+        submitButton.disabled = true;
+
+        try {
+          const formData = {
+            name: this.name.value,
+            email: this.email.value,
+            subject: this.subject.value,
+            message: this.message.value
+          };
+
+          const response = await fetch("http://localhost:5000/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+          });
+
+          const result = await response.json();
+
+          if (response.ok && result.success) {
+            alert("Your message has been sent successfully! Check your email for professor's response.");
+            this.reset();
+          } else {
+            alert(result.message || "Failed to send message. Please try again.");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Network error. Please check if the server is running and try again.");
+        } finally {
+          // Reset button state
+          submitButton.textContent = originalText;
+          submitButton.disabled = false;
+        }
+      });
+    </script>
+</body>
+
+</html>

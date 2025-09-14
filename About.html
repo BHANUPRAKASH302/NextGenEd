@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>About Us - NextGenEd</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    
+    <!-- About Page Styles -->
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(210, 76, 39, 0.8), rgba(118, 75, 162, 0.8)), url('assets/images/heading-bg-company.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0 80px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .stats-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        
+        .mission-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .mission-card {
+            background: linear-gradient(135deg,#d24c27 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .team-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .values-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 15px;
+            background: #f8f9fa;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+        
+        .value-card:hover .value-icon {
+            color: white;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #d24c27 0%, #764ba2 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sub Header -->
+    <div class="sub-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-8">
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="right-icons">
+                        <ul>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-behance"></i></a></li>
+                            <li><a href="https://devnovate.co/event/hack-with-hyderabad-2025" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            NextGenEd
+                        </a>
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="meetings.html">Meetings</a></li>
+                            <li class="scroll-to-section"><a href="About.html" class="active">About US</a></li>
+                            <li class="scroll-to-section"><a href="Courses.html">Courses</a></li> 
+                            <li class="scroll-to-section"><a href="Profile.html">Profile</a></li> 
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>About NextGenEd</h1>
+                    <p>Empowering the next generation of learners through innovative education, cutting-edge technology, and personalized learning experiences that prepare students for tomorrow's challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Students Enrolled</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Expert Instructors</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Courses Available</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="mission-card">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 30px; position: relative; z-index: 2;">Our Mission</h2>
+                        <p style="font-size: 1.3rem; line-height: 1.8; position: relative; z-index: 2;">
+                            To revolutionize education by providing accessible, high-quality learning experiences that bridge the gap between traditional education and modern technology. We believe every student deserves the opportunity to excel and achieve their dreams through innovative teaching methods and personalized support.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 20px;">Our Core Values</h2>
+                    <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">These principles guide everything we do and shape our educational approach</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fa fa-graduation-cap"></i>
+                        </div>
+                        <h4>Excellence</h4>
+                        <p>We maintain the highest standards in education and continuously strive for improvement in all our programs and services.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <h4>Innovation</h4>
+                        <p>We embrace cutting-edge technology and innovative teaching methods to provide the best learning experiences.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <h4>Accessibility</h4>
+                        <p>We believe education should be accessible to everyone, regardless of background or circumstances.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fa fa-lightbulb-o"></i>
+                        </div>
+                        <h4>Creativity</h4>
+                        <p>We encourage creative thinking and problem-solving skills that prepare students for real-world challenges.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fa fa-handshake-o"></i>
+                        </div>
+                        <h4>Community</h4>
+                        <p>We foster a supportive learning community where students, teachers, and parents work together for success.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fa fa-rocket"></i>
+                        </div>
+                        <h4>Growth</h4>
+                        <p>We are committed to continuous growth and development, both for our students and our institution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 20px;">Meet Our Team</h2>
+                    <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">The passionate educators and professionals who make NextGenEd possible</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <h4>Dr. Sarah Johnson</h4>
+                        <p style="color: #667eea; font-weight: 600; margin-bottom: 15px;">Chief Academic Officer</p>
+                        <p>With over 15 years in educational leadership, Dr. Johnson leads our academic programs and ensures the highest quality of education.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <h4>Prof. Michael Chen</h4>
+                        <p style="color: #667eea; font-weight: 600; margin-bottom: 15px;">Head of Technology</p>
+                        <p>An expert in educational technology, Prof. Chen oversees our digital learning platforms and innovative teaching tools.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <h4>Dr. Emily Rodriguez</h4>
+                        <p style="color: #667eea; font-weight: 600; margin-bottom: 15px;">Student Success Director</p>
+                        <p>Dr. Rodriguez focuses on student support services and ensures every learner has the resources they need to succeed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Start Your Learning Journey?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 40px;">Join thousands of students who are already transforming their futures with NextGenEd</p>
+                    <a href="Courses.html" class="cta-button">Explore Courses</a>
+                    <a href="index.html#contact" class="cta-button">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+</body>
+</html>
